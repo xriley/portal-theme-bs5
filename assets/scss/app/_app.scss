@@ -64,6 +64,13 @@
 		display: inline-block;
 	}
 	
+	.btn-close {
+		padding: 1rem;
+		&:focus {
+			@include box-shadow(none);
+		}
+	}
+	
 }
 
 
