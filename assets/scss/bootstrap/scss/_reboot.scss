@@ -1,4 +1,4 @@
-// stylelint-disable at-rule-no-vendor-prefix, declaration-no-important, selector-no-qualifying-type, property-no-vendor-prefix
+// stylelint-disable declaration-no-important, selector-no-qualifying-type, property-no-vendor-prefix
 
 
 // Reboot
@@ -27,6 +27,12 @@
 
 :root {
   font-size: $font-size-root;
+
+  @if $enable-smooth-scroll {
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
 }
 
 
@@ -48,20 +54,6 @@ body {
   background-color: $body-bg; // 2
   -webkit-text-size-adjust: 100%; // 3
   -webkit-tap-highlight-color: rgba($black, 0); // 4
-}
-
-
-// Future-proof rule: in browsers that support :focus-visible, suppress the focus outline
-// on elements that programmatically receive focus but wouldn't normally show a visible
-// focus outline. In general, this would mean that the outline is only applied if the
-// interaction that led to the element receiving programmatic focus was a keyboard interaction,
-// or the browser has somehow determined that the user is primarily a keyboard user and/or
-// wants focus outlines to always be presented.
-// See https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible
-// and https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/
-
-[tabindex="-1"]:focus:not(:focus-visible) {
-  outline: 0 !important;
 }
 
 
@@ -143,14 +135,13 @@ p {
 
 // Abbreviations
 //
-// 1. Duplicate behavior to the data-* attribute for our tooltip plugin
+// 1. Duplicate behavior to the data-bs-* attribute for our tooltip plugin
 // 2. Add the correct text decoration in Chrome, Edge, Opera, and Safari.
 // 3. Add explicit cursor to indicate changed behavior.
 // 4. Prevent the text-decoration to be skipped.
 
 abbr[title],
-abbr[data-original-title] { // 1
-  text-decoration: underline; // 2
+abbr[data-bs-original-title] { // 1
   text-decoration: underline dotted; // 2
   cursor: help; // 3
   text-decoration-skip-ink: none; // 4
@@ -284,13 +275,13 @@ kbd,
 samp {
   font-family: $font-family-code;
   @include font-size(1em); // Correct the odd `em` font sizing in all browsers.
+  direction: ltr #{"/* rtl:ignore */"};
+  unicode-bidi: bidi-override;
 }
 
 // 1. Remove browser default top margin
 // 2. Reset browser default of `1em` to use `rem`s
 // 3. Don't allow content to break outside
-// 4. Disable auto-hiding scrollbar in legacy Edge to avoid overlap,
-//    making it impossible to interact with the content
 
 pre {
   display: block;
@@ -299,7 +290,6 @@ pre {
   overflow: auto; // 3
   @include font-size($code-font-size);
   color: $pre-color;
-  -ms-overflow-style: scrollbar; // 4
 
   // Account for some code outputs that place code tags in pre tags
   code {
@@ -406,13 +396,13 @@ button {
   border-radius: 0;
 }
 
-// Work around a Firefox bug where the transparent `button` background
-// results in a loss of the default `button` focus styles.
-// Credit https://github.com/suitcss/base/
+// Explicitly remove focus outline in Chromium when it shouldn't be
+// visible (e.g. as result of mouse click or touch tap). It already
+// should be doing this automatically, but seems to currently be
+// confused and applies its very visible two-tone outline anyway.
 
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+button:focus:not(:focus-visible) {
+  outline: 0;
 }
 
 // 1. Remove the margin in Firefox and Safari
@@ -428,20 +418,11 @@ textarea {
   line-height: inherit;
 }
 
-// Show the overflow in Edge
-
-button,
-input {
-  overflow: visible;
-}
-
 // Remove the inheritance of text transform in Firefox
-
 button,
 select {
   text-transform: none;
 }
-
 // Set the cursor for non-`<button>` buttons
 //
 // Details at https://github.com/twbs/bootstrap/pull/30562
@@ -449,11 +430,15 @@ select {
   cursor: pointer;
 }
 
-// Remove the inheritance of word-wrap in Safari.
-// See https://github.com/twbs/bootstrap/issues/24990
-
 select {
+  // Remove the inheritance of word-wrap in Safari.
+  // See https://github.com/twbs/bootstrap/issues/24990
   word-wrap: normal;
+
+  // Undo the opacity change from Chrome
+  &:disabled {
+    opacity: 1;
+  }
 }
 
 // Remove the dropdown arrow in Chrome from inputs built with datalists.
@@ -510,8 +495,7 @@ fieldset {
 
 // 1. By using `float: left`, the legend will behave like a block element.
 //    This way the border of a fieldset wraps around the legend if present.
-// 2. Correct the text wrapping in Edge.
-// 3. Fix wrapping bug.
+// 2. Fix wrapping bug.
 //    See https://github.com/twbs/bootstrap/issues/29712
 
 legend {
@@ -522,10 +506,9 @@ legend {
   @include font-size($legend-font-size);
   font-weight: $legend-font-weight;
   line-height: inherit;
-  white-space: normal; // 2
 
   + * {
-    clear: left; // 3
+    clear: left; // 2
   }
 }
 
@@ -557,6 +540,20 @@ legend {
   -webkit-appearance: textfield; // 2
 }
 
+// 1. A few input types should stay LTR
+// See https://rtlstyling.com/posts/rtl-styling#form-inputs
+// 2. RTL only output
+// See https://rtlcss.com/learn/usage-guide/control-directives/#raw
+
+/* rtl:raw:
+[type="tel"],
+[type="url"],
+[type="email"],
+[type="number"] {
+  direction: ltr;
+}
+*/
+
 // Remove the inner padding in Chrome and Safari on macOS.
 
 ::-webkit-search-decoration {
@@ -569,7 +566,14 @@ legend {
   padding: 0;
 }
 
-// 1. Change font properties to `inherit` in Safari.
+
+// Inherit font family and line height for file input buttons
+
+::file-selector-button {
+  font: inherit;
+}
+
+// 1. Change font properties to `inherit`
 // 2. Correct the inability to style clickable types in iOS and Safari.
 
 ::-webkit-file-upload-button {

@@ -1,7 +1,7 @@
 /*!
- * Bootstrap Reboot v5.0.0-alpha2 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
+ * Bootstrap Reboot v5.0.1 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
  */
@@ -11,9 +11,15 @@
   box-sizing: border-box;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -21,10 +27,6 @@ body {
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-[tabindex="-1"]:focus:not(:focus-visible) {
-  outline: 0 !important;
 }
 
 hr {
@@ -39,7 +41,7 @@ hr:not([size]) {
   height: 1px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h6, h5, h4, h3, h2, h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 500;
@@ -49,7 +51,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: calc(1.375rem + 1.5vw);
 }
-
 @media (min-width: 1200px) {
   h1 {
     font-size: 2.5rem;
@@ -59,7 +60,6 @@ h1 {
 h2 {
   font-size: calc(1.325rem + 0.9vw);
 }
-
 @media (min-width: 1200px) {
   h2 {
     font-size: 2rem;
@@ -69,7 +69,6 @@ h2 {
 h3 {
   font-size: calc(1.3rem + 0.6vw);
 }
-
 @media (min-width: 1200px) {
   h3 {
     font-size: 1.75rem;
@@ -79,7 +78,6 @@ h3 {
 h4 {
   font-size: calc(1.275rem + 0.3vw);
 }
-
 @media (min-width: 1200px) {
   h4 {
     font-size: 1.5rem;
@@ -100,8 +98,7 @@ p {
 }
 
 abbr[title],
-abbr[data-original-title] {
-  text-decoration: underline;
+abbr[data-bs-original-title] {
   -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   cursor: help;
@@ -139,7 +136,7 @@ dt {
 }
 
 dd {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   margin-left: 0;
 }
 
@@ -170,20 +167,19 @@ sup {
 }
 
 sub {
-  bottom: -.25em;
+  bottom: -0.25em;
 }
 
 sup {
-  top: -.5em;
+  top: -0.5em;
 }
 
 a {
   color: #0d6efd;
   text-decoration: underline;
 }
-
 a:hover {
-  color: #024dbc;
+  color: #0a58ca;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -197,6 +193,8 @@ kbd,
 samp {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 1em;
+  direction: ltr /* rtl:ignore */;
+  unicode-bidi: bidi-override;
 }
 
 pre {
@@ -205,9 +203,7 @@ pre {
   margin-bottom: 1rem;
   overflow: auto;
   font-size: 0.875em;
-  -ms-overflow-style: scrollbar;
 }
-
 pre code {
   font-size: inherit;
   color: inherit;
@@ -219,7 +215,6 @@ code {
   color: #d63384;
   word-wrap: break-word;
 }
-
 a > code {
   color: inherit;
 }
@@ -231,7 +226,6 @@ kbd {
   background-color: #212529;
   border-radius: 0.2rem;
 }
-
 kbd kbd {
   padding: 0;
   font-size: 1em;
@@ -283,9 +277,8 @@ button {
   border-radius: 0;
 }
 
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+button:focus:not(:focus-visible) {
+  outline: 0;
 }
 
 input,
@@ -300,21 +293,19 @@ textarea {
 }
 
 button,
-input {
-  overflow: visible;
-}
-
-button,
 select {
   text-transform: none;
 }
 
-[role="button"] {
+[role=button] {
   cursor: pointer;
 }
 
 select {
   word-wrap: normal;
+}
+select:disabled {
+  opacity: 1;
 }
 
 [list]::-webkit-calendar-picker-indicator {
@@ -322,16 +313,15 @@ select {
 }
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
-
 button:not(:disabled),
-[type="button"]:not(:disabled),
-[type="reset"]:not(:disabled),
-[type="submit"]:not(:disabled) {
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled) {
   cursor: pointer;
 }
 
@@ -358,15 +348,12 @@ legend {
   margin-bottom: 0.5rem;
   font-size: calc(1.275rem + 0.3vw);
   line-height: inherit;
-  white-space: normal;
 }
-
 @media (min-width: 1200px) {
   legend {
     font-size: 1.5rem;
   }
 }
-
 legend + * {
   clear: left;
 }
@@ -385,17 +372,29 @@ legend + * {
   height: auto;
 }
 
-[type="search"] {
+[type=search] {
   outline-offset: -2px;
   -webkit-appearance: textfield;
 }
 
+/* rtl:raw:
+[type="tel"],
+[type="url"],
+[type="email"],
+[type="number"] {
+  direction: ltr;
+}
+*/
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
 ::-webkit-color-swatch-wrapper {
   padding: 0;
+}
+
+::file-selector-button {
+  font: inherit;
 }
 
 ::-webkit-file-upload-button {
@@ -423,4 +422,5 @@ progress {
 [hidden] {
   display: none !important;
 }
+
 /*# sourceMappingURL=bootstrap-reboot.css.map */

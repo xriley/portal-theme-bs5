@@ -408,34 +408,35 @@
 	}
 
 	.faq-accordion {
-		.card {
+		.accordion-item {
 			@include border-radius(0);
-			border: none;
-			border-bottom: 1px solid $theme-border-color;
+			border: none;	
+			border-bottom: 1px solid $theme-border-color;	
 			&:last-child {
 				border-bottom: none;
-			}
+			}	
 		}
-		.card-header {
+		.accordion-header {
+			border: none;
+		}
+		.accordion-button {
 			padding: 1rem;
-			
 			@include border-radius(0);
 			border: none;
+			box-shadow: none;
 			background: none;
 			padding-left: 0;
-		}
-		.card-title {
-			margin-bottom: 0;
-			
-		}
-		
-		.card-toggle {
-			padding: 0;
+			font-size: 1rem;
 			text-decoration: none;
 			color: $theme-color-primary;
-			font-size: 1rem;
+			
+
+			&:after {
+				display: none;
+			}
 		}
-		.card-body {
+		
+		.accordion-body {
 			padding-left: 0;
 			padding-right: 0;
 			padding-top: 0;

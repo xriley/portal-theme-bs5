@@ -44,7 +44,7 @@
 		            
 		            <div class="app-utilities col-auto">
 			            <div class="app-utility-item app-notifications-dropdown dropdown">    
-				            <a class="dropdown-toggle no-toggle-arrow" id="notifications-dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false" title="Notifications">
+				            <a class="dropdown-toggle no-toggle-arrow" id="notifications-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" title="Notifications">
 					            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
 					            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
@@ -142,7 +142,7 @@
 					    </div><!--//app-utility-item-->
 			            
 			            <div class="app-utility-item app-user-dropdown dropdown">
-				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="assets/images/user.png" alt="user profile"></a>
+				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="assets/images/user.png" alt="user profile"></a>
 				            <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
 								<li><a class="dropdown-item" href="account.html">Account</a></li>
 								<li><a class="dropdown-item" href="settings.html">Settings</a></li>
@@ -160,7 +160,7 @@
 	        <div class="sidepanel-inner d-flex flex-column">
 		        <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 		        <div class="app-branding">
-		            <a class="app-logo" href="index.html"><img class="logo-icon mr-2" src="assets/images/app-logo.svg" alt="logo"><span class="logo-text">PORTAL</span></a>
+		            <a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"><span class="logo-text">PORTAL</span></a>
 	
 		        </div><!--//app-branding-->  
 			    <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
@@ -206,7 +206,7 @@
 					    </li><!--//nav-item-->
 					    <li class="nav-item has-submenu">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link submenu-toggle active" href="#" data-toggle="collapse" data-target="#submenu-1" aria-expanded="true" aria-controls="submenu-1">
+					        <a class="nav-link submenu-toggle active" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1" aria-expanded="true" aria-controls="submenu-1">
 						        <span class="nav-icon">
 						        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
 						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-files" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -221,7 +221,7 @@
 	</svg>
 	                             </span><!--//submenu-arrow-->
 					        </a><!--//nav-link-->
-					        <div id="submenu-1" class="collapse submenu submenu-1 show" data-parent="#menu-accordion">
+					        <div id="submenu-1" class="collapse submenu submenu-1 show" data-bs-parent="#menu-accordion">
 						        <ul class="submenu-list list-unstyled">
 							        <li class="submenu-item"><a class="submenu-link" href="notifications.html">Notifications</a></li>
 							        <li class="submenu-item"><a class="submenu-link active" href="account.html">Account</a></li>
@@ -232,7 +232,7 @@
 					    </li><!--//nav-item-->
 					    <li class="nav-item has-submenu">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-2" aria-expanded="false" aria-controls="submenu-2">
+					        <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-2" aria-expanded="false" aria-controls="submenu-2">
 						        <span class="nav-icon">
 						        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
 						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-columns-gap" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -246,7 +246,7 @@
 	</svg>
 	                             </span><!--//submenu-arrow-->
 					        </a><!--//nav-link-->
-					        <div id="submenu-2" class="collapse submenu submenu-2" data-parent="#menu-accordion">
+					        <div id="submenu-2" class="collapse submenu submenu-2" data-bs-parent="#menu-accordion">
 						        <ul class="submenu-list list-unstyled">
 							        <li class="submenu-item"><a class="submenu-link" href="login.html">Login</a></li>
 							        <li class="submenu-item"><a class="submenu-link" href="signup.html">Signup</a></li>
@@ -358,7 +358,7 @@
 										    <div class="item-label mb-2"><strong>Photo</strong></div>
 										    <div class="item-data"><img class="profile-image" src="assets/images/user.png" alt=""></div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Change</a>
 									    </div><!--//col-->
 								    </div><!--//row-->
@@ -369,7 +369,7 @@
 										    <div class="item-label"><strong>Name</strong></div>
 									        <div class="item-data">James Doe</div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Change</a>
 									    </div><!--//col-->
 								    </div><!--//row-->
@@ -380,7 +380,7 @@
 										    <div class="item-label"><strong>Email</strong></div>
 									        <div class="item-data">james.doe@website.com</div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Change</a>
 									    </div><!--//col-->
 								    </div><!--//row-->
@@ -393,7 +393,7 @@
 										        https://johndoewebsite.com
 									        </div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Change</a>
 									    </div><!--//col-->
 								    </div><!--//row-->
@@ -406,7 +406,7 @@
 										        New York
 									        </div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Change</a>
 									    </div><!--//col-->
 								    </div><!--//row-->
@@ -443,7 +443,7 @@
 										    <div class="item-label"><strong>Language </strong></div>
 									        <div class="item-data">English</div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Change</a>
 									    </div><!--//col-->
 								    </div><!--//row-->
@@ -454,7 +454,7 @@
 										    <div class="item-label"><strong>Time Zone</strong></div>
 									        <div class="item-data">Central Standard Time (UTC-6)</div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Change</a>
 									    </div><!--//col-->
 								    </div><!--//row-->
@@ -465,7 +465,7 @@
 										    <div class="item-label"><strong>Currency</strong></div>
 									        <div class="item-data">$(US Dollars)</div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Change</a>
 									    </div><!--//col-->
 								    </div><!--//row-->
@@ -476,7 +476,7 @@
 										    <div class="item-label"><strong>Email Subscription</strong></div>
 									        <div class="item-data">Off</div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Change</a>
 									    </div><!--//col-->
 								    </div><!--//row-->
@@ -487,7 +487,7 @@
 										    <div class="item-label"><strong>SMS Notifications</strong></div>
 									        <div class="item-data">On</div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Change</a>
 									    </div><!--//col-->
 								    </div><!--//row-->
@@ -525,7 +525,7 @@
 										    <div class="item-label"><strong>Password</strong></div>
 									        <div class="item-data">••••••••</div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Change</a>
 									    </div><!--//col-->
 								    </div><!--//row-->
@@ -536,7 +536,7 @@
 										    <div class="item-label"><strong>Two-Factor Authentication</strong></div>
 									        <div class="item-data">You haven't set up two-factor authentication. </div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Set up</a>
 									    </div><!--//col-->
 								    </div><!--//row-->
@@ -572,10 +572,10 @@
 							    <div class="item border-bottom py-3">
 								    <div class="row justify-content-between align-items-center">
 									    <div class="col-auto">
-										    <div class="item-label"><i class="fab fa-cc-visa mr-2"></i><strong>Credit/Debit Card </strong></div>
+										    <div class="item-label"><i class="fab fa-cc-visa me-2"></i><strong>Credit/Debit Card </strong></div>
 									        <div class="item-data">1234*******5678</div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Edit</a>
 									    </div><!--//col-->
 								    </div><!--//row-->
@@ -583,10 +583,10 @@
 							    <div class="item border-bottom py-3">
 								    <div class="row justify-content-between align-items-center">
 									    <div class="col-auto">
-										    <div class="item-label"><i class="fab fa-paypal mr-2"></i><strong>PayPal</strong></div>
+										    <div class="item-label"><i class="fab fa-paypal me-2"></i><strong>PayPal</strong></div>
 									        <div class="item-data">Not connected</div>
 									    </div><!--//col-->
-									    <div class="col text-right">
+									    <div class="col text-end">
 										    <a class="btn-sm app-btn-secondary" href="#">Connect</a>
 									    </div><!--//col-->
 								    </div><!--//row-->

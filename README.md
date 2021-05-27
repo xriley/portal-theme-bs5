@@ -31,7 +31,7 @@ If you'd like to **use the template without the attribution link**, you can [buy
 
 
 ## Latest Version
-**v1.1** - 09 Oct 2020
+**v2.0** - 2021-05-27
 
 [Changelog](https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/?target=changelog)
 
