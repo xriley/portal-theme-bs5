@@ -7,7 +7,7 @@
 Portal is a **free Bootstrap admin dashboard template** made for software developers.
 
 ## PLEASE NOTE:
-**This template is built on [Bootstrap 5 (alpha2)](https://v5.getbootstrap.com/) and Vanilla JS (no jQuery dependency).**
+**This template is built on [Bootstrap 5 (stable)](https://v5.getbootstrap.com/) and Vanilla JS (no jQuery dependency).**
 
 ## Author & License
 
