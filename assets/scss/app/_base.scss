@@ -96,7 +96,7 @@ button.close {
 
 .btn {
 	font-weight: 600;
-	padding: 0.4rem 1rem;
+	padding: 0.5rem 1rem;
 	font-size: 0.875rem;
 	border: none;
 	&:hover, &:active, &:focus {
@@ -116,7 +116,7 @@ button.close {
     background: $theme-color-primary;
 	color: #fff;
 	border-color: $theme-color-primary;
-	&:hover {
+	&:hover, &:active {
 		color: #fff;
 		background: lighten($theme-color-primary, 5%);
 		border-color: lighten($theme-color-primary, 5%);

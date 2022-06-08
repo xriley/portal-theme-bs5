@@ -6,8 +6,6 @@
 
 Portal is a **free Bootstrap admin dashboard template** made for software developers.
 
-## PLEASE NOTE:
-**This template is built on [Bootstrap 5 (stable)](https://v5.getbootstrap.com/) and Vanilla JS (no jQuery dependency).**
 
 ## Author & License
 
@@ -31,7 +29,7 @@ If you'd like to **use the template without the attribution link**, you can [buy
 
 
 ## Latest Version
-**v2.0** - 2021-05-27
+**v2.1** - 2022-06-08
 
 [Changelog](https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/?target=changelog)
 
@@ -42,8 +40,8 @@ If you'd like to **use the template without the attribution link**, you can [buy
 -  HTML5 + CSS3
 -  **Built on Bootstrap 5 (no jQuery)**
 -  **SCSS** source files included
--  1500+ FontAwesome icons
--  1000+ Bootstrap icons
+-  FontAwesome icons
+-  Bootstrap icons
 
 
 ## Credits
