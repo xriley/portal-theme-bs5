@@ -29,7 +29,7 @@ If you'd like to **use the template without the attribution link**, you can [buy
 
 
 ## Latest Version
-**v2.1** - 2022-06-08
+**v3.0** - 2023-06-26
 
 [Changelog](https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/?target=changelog)
 
