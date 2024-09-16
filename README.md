@@ -17,7 +17,7 @@ If you'd like to **use the template without the attribution link**, you can [buy
 
 #### Follow Xiaoying
 
-[Twitter](https://twitter.com/3rdwave_themes)
+[X](https://x.com/3rdwave_themes)
 
 [Facebook](https://www.facebook.com/3rdwavethemes/)
 
@@ -29,7 +29,7 @@ If you'd like to **use the template without the attribution link**, you can [buy
 
 
 ## Latest Version
-**v3.0** - 2023-06-26
+**v3.1** - 2024-09-16
 
 [Changelog](https://themes.3rdwavemedia.com/bootstrap-templates/admin-dashboard/portal-free-bootstrap-admin-dashboard-template-for-developers/?target=changelog)
 
