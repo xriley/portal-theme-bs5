@@ -1,17 +1,17 @@
 'use strict';
 
 /* ===== Enable Bootstrap Popover (on element  ====== */
-
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl)
-})
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
 /* ==== Enable Bootstrap Alert ====== */
-var alertList = document.querySelectorAll('.alert')
-alertList.forEach(function (alert) {
-  new bootstrap.Alert(alert)
-});
+//var alertList = document.querySelectorAll('.alert')
+//alertList.forEach(function (alert) {
+//  new bootstrap.Alert(alert)
+//});
+
+const alertList = document.querySelectorAll('.alert')
+const alerts = [...alertList].map(element => new bootstrap.Alert(element))
 
 
 /* ===== Responsive Sidepanel ====== */
@@ -81,12 +81,12 @@ searchMobileTrigger.addEventListener('click', () => {
 	
 	let searchMobileTriggerIcon = document.querySelector('.search-mobile-trigger-icon');
 	
-	if(searchMobileTriggerIcon.classList.contains('fa-search')) {
-		searchMobileTriggerIcon.classList.remove('fa-search');
-		searchMobileTriggerIcon.classList.add('fa-times');
+	if(searchMobileTriggerIcon.classList.contains('fa-magnifying-glass')) {
+		searchMobileTriggerIcon.classList.remove('fa-magnifying-glass');
+		searchMobileTriggerIcon.classList.add('fa-xmark');
 	} else {
-		searchMobileTriggerIcon.classList.remove('fa-times');
-		searchMobileTriggerIcon.classList.add('fa-search');
+		searchMobileTriggerIcon.classList.remove('fa-xmark');
+		searchMobileTriggerIcon.classList.add('fa-magnifying-glass');
 	}
 	
 		
